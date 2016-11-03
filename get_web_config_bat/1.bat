@@ -1,19 +1,21 @@
 @echo off
 goto :main
-ÕâÊÇ×¢ÊÍ£º(for /f "delims="µÄ×÷ÓÃÎªÈ¡ÏûÄ¬ÈÏµÄÒÔ¿Õ¸ñµÈ·ûºÅ×÷Îª·Ö¸î·û
-dir /s ÊµÏÖÁËlinuxÖÐµÄfind¹¦ÄÜ£¬for /r path %%i in (web.conf?g) do ... Ò²¿ÉÒÔÊµÏÖfind¹¦ÄÜ£¬µ«ÊÇ×Ô¼ºÊµÏÖÊ±·¢ÏÖfor /r path ...ÖÐµÄpathÖ»ÄÜÊÇÒ»¸ö¾ßÌåÂ·¾¶£¬²»ÄÜÊÇ±äÁ¿£¬ÕâÑù¾Í²»ÄÜ±éÀúÈ«²¿´ÅÅÌÁË)
+è¿™æ˜¯æ³¨é‡Šï¼š(for /f "delims="çš„ä½œç”¨ä¸ºå–æ¶ˆé»˜è®¤çš„ä»¥ç©ºæ ¼ç­‰ç¬¦å·ä½œä¸ºåˆ†å‰²ç¬¦
+dir /s å®žçŽ°äº†linuxä¸­çš„findåŠŸèƒ½ï¼Œfor /r path %%i in (web.conf?g) do ... ä¹Ÿå¯ä»¥å®žçŽ°findåŠŸèƒ½ï¼Œä½†æ˜¯è‡ªå·±å®žçŽ°æ—¶å‘çŽ°for /r path ...ä¸­çš„pathåªèƒ½æ˜¯ä¸€ä¸ªå…·
+ä½“è·¯å¾„ï¼Œä¸èƒ½æ˜¯å˜é‡ï¼Œè¿™æ ·å°±ä¸èƒ½éåŽ†å…¨éƒ¨ç£ç›˜äº†)
 :main
 set str=c d e f g h i j k l m n o p q r s t u v w x y z 
-echo  µ±Ç°Ó²ÅÌµÄ·ÖÇøÓÐ£º 
+echo  å½“å‰ç¡¬ç›˜çš„åˆ†åŒºæœ‰ï¼š 
 for %%i in (%str%) do (
 if exist %%i: (echo %%i:
-for /f "delims=" %%j in ('dir /b /s "%%i:\web.conf?g"') do (
+for /f "delims=" %%j in ('dir /b /s %%i:\web.conf?g %%i:\global.a?a %%i:\wp-config.p?p %%i:\setting.p?p %%i:\database.p?p %%i:\config.p?p %%i:
+\config.ini.p?p %%i:\conn.p?p %%i:\connect.p?p %%i:\conn.a?p %%i:\conn.a?a') do (
 echo *****filepath***** >> tmp.txt
 echo %%j >> tmp.txt
 type "%%j" >> tmp.txt
 echo. >> tmp.txt
 echo ---------------------------- >> tmp.txt
-echo ÎÒÊÇÃÀÀöµÄ·Ö¸îÏß >> tmp.txt
+echo æˆ‘æ˜¯ç¾Žä¸½çš„åˆ†å‰²çº¿ >> tmp.txt
 echo ---------------------------- >> tmp.txt
 echo. >> tmp.txt
 )
